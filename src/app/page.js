@@ -66,7 +66,7 @@ export default function Home() {
       <div className='flex flex-col'>
         <div class='m-10'><Navbar /></div>
         <div className='ms-14 text-6xl mb-6'>
-          <h1 className='mb-6'>SPACE</h1>
+          <div className='flex basis1/2'><h1 className='transition hover:ml4' >SPACE</h1></div>
           <h1 className='mb-6'>ACADEMY</h1>
           <h1 className='mb-6'>LIFE</h1>
           <h3 className='mb-6 text-xl'>We believe in bringing the difference by using principles</h3>
