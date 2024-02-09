@@ -5,3 +5,14 @@
 html {
     scroll-behavior: smooth;
 }
+
+.fade {}
+
+.fade {
+    opacity: 0;
+    transition: all 5s;
+}
+
+.fade.inview {
+    opacity: 1;
+}

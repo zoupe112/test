@@ -1,7 +1,6 @@
 'use client'
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { useEffect, useState } from 'react';
 import 'flowbite';
 import Navbar from './components/Navbar';
 import './globals.css'
@@ -11,10 +10,27 @@ export default function Home() {
     changepics2()
     changepics3()
     changepics4()
-    setIsClient(true)
+    fadecontent()
   }, []);
 
-  const [isClient, setIsClient] = useState(false)
+
+  const fadecontent = () => {
+    let elementsArray = document.querySelectorAll(".fade");
+    window.addEventListener('scroll', fadeIn);
+    function fadeIn() {
+      for (var i = 0; i < elementsArray.length; i++) {
+        var elem = elementsArray[i]
+        var distInView = elem.getBoundingClientRect().top - window.innerHeight + 20;
+        if (distInView < 0) {
+          elem.classList.add("inview");
+        } else {
+          elem.classList.remove("inview");
+        }
+      }
+    }
+    fadeIn();
+
+  }
 
   const changepics1 = () => {
     var imageSources = ["image1.jpg", "image5.jpg"]
@@ -63,37 +79,38 @@ export default function Home() {
   return (
     <>
       <div className='absolute -z-10 bg-[url("/logo-large.png")] bg-[length:1168px_1168px] bg-no-repeat bg-right-top opacity-25 scroll-smooth' style={{ backgroundPositionX: '1200px' }}><img src='logo-large.png' className='opacity-0'></img></div>
-      <div className='flex flex-col'>
+      <div className='flex flex-col bg-white dark:bg-black dark:text-white'>
         <div class='m-10'><Navbar /></div>
-        <div className='ms-14 text-6xl mb-6'>
-          <div className='flex basis1/2'><h1 className='transition hover:ml4' >SPACE</h1></div>
-          <h1 className='mb-6'>ACADEMY</h1>
-          <h1 className='mb-6'>LIFE</h1>
+        <div className='ms-14 text-6xl mb-6 transition'>
+          <div className='flex basis1/2'><h1 className='mb-6 transition hover:translate-x-5' >SPACE</h1></div>
+          <h1 className='mb-6 transition hover:translate-x-5'>ACADEMY</h1>
+          <h1 className='mb-6 transition hover:translate-x-5'>LIFE</h1>
           <h3 className='mb-6 text-xl'>We believe in bringing the difference by using principles</h3>
           <h4 className='mb-6 text-xl'>Rapid pace | Simplistic & Reusable Design | Plug & Play Components | Build Agile Teams</h4>
           <button type="button" class="text-white hover:text-orange-400 bg-orange-400 hover:bg-white border hover:border-orange-400 text-lg px-5 py-2.5 me-2 mb-2">ABOUT US</button>
         </div>
         <div class='flex justify-center '>
           <div name='about' id='about' class='flex flex-col basis-3/5 pt-44'>
-            <h1 className='text-6xl'>ABOUT US</h1>
-            <p className='mt-5'>&emsp;&nbsp;We develop innovative and creative Solutions, provide Training and IT services that provide total communication and information solutions. Among a plethora of services, Cross Platform mobile application solutions and development and Web application development enabled with intelligence through AI ML and make distributed software ecosystem on Blockchain smart contracts, are major area of focus for Enixer.</p>
-            <p className='mt-5'>&emsp;&nbsp;Tailor made solutions in Banking, Payments, e-commerce, B2B & managed hosting are few that we offer.</p>
-            <img src='logo-large.png' className='mr-auto ml-auto w-2/12 h-2/12 mt-10'></img>
-            <div name='academy' id='academy' className='mt-44 pt-44'>
+            <div className='fade'>
+              <h1 className='text-6xl'>ABOUT US</h1>
+              <p className='mt-5'>&emsp;&nbsp;We develop innovative and creative Solutions, provide Training and IT services that provide total communication and information solutions. Among a plethora of services, Cross Platform mobile application solutions and development and Web application development enabled with intelligence through AI ML and make distributed software ecosystem on Blockchain smart contracts, are major area of focus for Enixer.</p>
+              <p className='mt-5'>&emsp;&nbsp;Tailor made solutions in Banking, Payments, e-commerce, B2B & managed hosting are few that we offer.</p>
+              <img src='logo-large.png' className='mr-auto ml-auto w-2/12 h-2/12 mt-10'></img></div>
+            <div name='academy' id='academy' className='mt-44 pt-44 fade'>
               <h1 className='text-6xl'>ACADEMY</h1>
               <p className='mt-5'>&emsp;&nbsp;Train to build millennial workforce with niche technologies in Digital & Mobile tools / frameworks, AI ML, IOT and Blockchain. Strategically train human resources on next gen. technologies, create on-job environment by using real time & practical assignments.</p>
               <p className='mt-5'>&emsp;&nbsp;Enixer Academy cor principle is to touch natural and inner ability of human resources and train to be independent contributor to agile teams.</p>
             </div>
           </div>
         </div>
-        <div className='flex justify-center mt-6 mb-44'>
+        <div className='flex justify-center mt-6 mb-44 fade'>
           <div class='flex flex-row basis-3/5 items-center'>
             <div className='basis-80 border-2 border-orange-400 p-7'>Successfully completed Cross-platform Mobile Application Development - on Xamarin bootcamp training for 16 members batch</div>
             <div className='basis-80 ml-20 mr-20 border-2 border-orange-400 p-10'>Successfully completed Cross-platform Mobile Application Development - on Xamarin bootcamp training for one batch</div>
             <div className='basis-80 border-2 border-orange-400 p-11'>Successfully completed WebAPI and Entity Programming in C# bootcamp training for one batch</div>
           </div>
         </div>
-        <div className='flex justify-center'>
+        <div className='flex justify-center fade'>
           <div class='flex basis-3/5 bg-yellow-50/50 p-10'>
             <div ><p className=' text-2xl text-center text-orange-400'>Planned / On-Going</p>
               <div className='grid  grid-cols-5'>
@@ -106,7 +123,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div name='why-enixer' id='why-enixer' class='flex justify-center pt-44'>
+        <div name='why-enixer' id='why-enixer' class='flex justify-center pt-44 fade'>
           <div class='flex flex-col basis-3/5'>
             <h1 className='text-6xl'>WHY ENIXER ?</h1>
             <div class='grid  grid-cols-2' style={{ gridTemplateColumns: '1fr 2fr' }}>
@@ -130,7 +147,7 @@ export default function Home() {
 
           </div>
         </div>
-        <div name='exp' id='exp' class='flex justify-center pt-44'>
+        <div name='exp' id='exp' class='flex justify-center pt-44 fade'>
           <div class='flex flex-col basis-3/5'>
             <h1 className='text-6xl mb-6'>EXPERIENCE & SPECIALIST</h1>
             <div className='flex flex-row'>
@@ -155,25 +172,25 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div name='customer' id='customer' class='flex justify-center pt-44'>
+        <div name='customer' id='customer' class='flex justify-center pt-44 fade'>
           <div class='flex flex-col basis-3/5'>
             <h1 className='text-6xl mb-6 '>OUR CUSTOMER</h1>
             <div className='flex justify-center'>
-              <div className='mr-2 transition after:border-y-2 after:border-orange-400 after:translate-x-0 hover:after:translate-x-full'><img src='c1.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
-              <div><img src='c2.jpg' className='mr-4 border-2 border-slate-100' style={{ width: '134px', height: '134px' }}></img></div>
-              <div><img src='c3.jpg' className='mr-4 border-2 border-slate-100' style={{ width: '134px', height: '134px' }}></img></div>
-              <div><img src='c4.jpg' className='mr-4 border-2 border-slate-100' style={{ width: '134px', height: '134px' }}></img></div>
-              <div><img src='c5.jpg' className='mr-4 border-2 border-slate-100' style={{ width: '134px', height: '134px' }}></img></div>
-              <div><img src='c6.jpg' className='mr-4 border-2 border-slate-100' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c1.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c2.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c3.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c4.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c5.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c6.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
             </div>
             <div className='flex justify-center mt-4'>
-              <div><img src='c7.png' className='mr-4 border-2 border-slate-100' style={{ width: '134px', height: '134px' }}></img></div>
-              <div><img src='c8.png' className='mr-4 border-2 border-slate-100' style={{ width: '134px', height: '134px' }}></img></div>
-              <div><img src='c9.jpg' className='mr-4 border-2 border-slate-100' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c7.png' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c8.png' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c9.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
             </div>
           </div>
         </div>
-        <div name='contact' id='contact' class='flex justify-center pt-44 mb-44'>
+        <div name='contact' id='contact' class='flex justify-center pt-44 mb-44 fade'>
           <div class='flex flex-col basis-3/5'>
             <h1 className='text-6xl mb-6 '>CONTACT US</h1>
             <p className='mb-4'>Enixer Co., Ltd <br></br>1338/948-949 Praram 3 rd., yannawa, chongnonsi, Bangkok 10120</p>
