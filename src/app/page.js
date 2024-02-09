@@ -16,6 +16,7 @@ export default function Home() {
 
   const fadecontent = () => {
     let elementsArray = document.querySelectorAll(".fade");
+    console.log(elementsArray);
     window.addEventListener('scroll', fadeIn);
     function fadeIn() {
       for (var i = 0; i < elementsArray.length; i++) {
@@ -79,7 +80,7 @@ export default function Home() {
   return (
     <>
       <div className='absolute -z-10 bg-[url("/logo-large.png")] bg-[length:1168px_1168px] bg-no-repeat bg-right-top opacity-25 scroll-smooth' style={{ backgroundPositionX: '1200px' }}><img src='logo-large.png' className='opacity-0'></img></div>
-      <div className='flex flex-col bg-white dark:bg-black dark:text-white'>
+      <div className='flex flex-col'>
         <div class='m-10'><Navbar /></div>
         <div className='ms-14 text-6xl mb-6 transition'>
           <div className='flex basis1/2'><h1 className='mb-6 transition hover:translate-x-5' >SPACE</h1></div>
