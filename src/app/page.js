@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import 'flowbite';
 import Navbar from './components/Navbar';
 import './globals.css'
+import { light } from '@mui/material/styles/createPalette';
 export default function Home() {
   useEffect(() => {
     changepics1()
@@ -12,6 +13,7 @@ export default function Home() {
     changepics4()
     fadecontent()
   }, []);
+
 
 
   const fadecontent = () => {
@@ -77,12 +79,13 @@ export default function Home() {
       index4++;
     }, 5000);
   }
+
   return (
     <>
-      <div className='absolute -z-10 bg-[url("/logo-large.png")] bg-[length:1168px_1168px] bg-no-repeat bg-right-top opacity-25 scroll-smooth' style={{ backgroundPositionX: '1200px' }}><img src='logo-large.png' className='opacity-0'></img></div>
-      <div className='flex flex-col'>
+      <div className='flex flex-col bg-white dark:bg-black dark:text-white'>
+        <div className='absolute opacity-25 scale-75'><img src='logo-large.png' style={{ translate: '1000px -280px' }}></img></div>
         <div class='m-10'><Navbar /></div>
-        <div className='ms-14 text-6xl mb-6 transition'>
+        <div className='ms-14 text-6xl mb-6'>
           <div className='flex basis1/2'><h1 className='mb-6 transition hover:translate-x-5' >SPACE</h1></div>
           <h1 className='mb-6 transition hover:translate-x-5'>ACADEMY</h1>
           <h1 className='mb-6 transition hover:translate-x-5'>LIFE</h1>
@@ -151,24 +154,24 @@ export default function Home() {
         <div name='exp' id='exp' class='flex justify-center pt-44 fade'>
           <div class='flex flex-col basis-3/5'>
             <h1 className='text-6xl mb-6'>EXPERIENCE & SPECIALIST</h1>
-            <div className='flex flex-row'>
-              <div className='flex flex-col basis1/2 mr-4'>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>Ecommerce web & mobile</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img><p>NML-Logistic Management</p></div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>SNMP Network Monitoring</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>JobVenger , Employee System</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>Marathon & Spots Health Check available on both iOS & Android for spots watch</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>HomeVilla : Booking Hotel and Home Online</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>Payroll System and HR Payroll System</div>
+            <div className='flex flex-row h-96'>
+              <div className='flex flex-col basis1/2 mr-4 '>
+                <div className='flex flex-row p-1 items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2 h-fit'></img>Ecommerce web & mobile</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2 '></img><p>NML-Logistic Management</p></div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>SNMP Network Monitoring</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>JobVenger , Employee System</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>Marathon & Spots Health Check available on both iOS & Android for spots watch</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>HomeVilla : Booking Hotel and Home Online</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>Payroll System and HR Payroll System</div>
               </div>
               <div className='flex flex-col'>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>Ecommerce web & mobile</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img><p>NML-Logistic Management</p></div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>SNMP Network Monitoring</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>JobVenger , Employee System</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>Marathon & Spots Health Check available on both iOS & Android for spots watch</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>HomeVilla : Booking Hotel and Home Online</div>
-                <div className='flex flex-row p-1  items-center shadow-lg'><img src='check.png' style={{ width: '15px', height: '14px' }} className='mr-2'></img>Payroll System and HR Payroll System</div>
+                <div className='flex flex-row p-1 items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>Ecommerce web & mobile</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img><p>NML-Logistic Management</p></div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>SNMP Network Monitoring</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>JobVenger , Employee System</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>Marathon & Spots Health Check available on both iOS & Android for spots watch</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>HomeVilla : Booking Hotel and Home Online</div>
+                <div className='flex flex-row p-1  items-center shadow-md h-11 transition-all hover:h-14'><img src='check.png' style={{ height: '50%' }} className='mr-2'></img>Payroll System and HR Payroll System</div>
               </div>
             </div>
           </div>
@@ -177,17 +180,17 @@ export default function Home() {
           <div class='flex flex-col basis-3/5'>
             <h1 className='text-6xl mb-6 '>OUR CUSTOMER</h1>
             <div className='flex justify-center'>
-              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c1.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
-              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c2.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
-              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c3.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
-              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c4.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
-              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c5.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
-              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c6.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 relative before:absolute before:transition-all before:bg-orange-400 before:h-1 before:w-full before:scale-x-0 hover:before:scale-x-100 after:absolute after:transition-all after:bg-orange-400 after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100  '><img src='c1.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 relative before:absolute before:transition-all before:bg-orange-400 before:h-1 before:w-full before:scale-x-0 hover:before:scale-x-100 after:absolute after:transition-all after:bg-orange-400 after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 '><img src='c2.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 relative before:absolute before:transition-all before:bg-orange-400 before:h-1 before:w-full before:scale-x-0 hover:before:scale-x-100 after:absolute after:transition-all after:bg-orange-400 after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 '><img src='c3.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 relative before:absolute before:transition-all before:bg-orange-400 before:h-1 before:w-full before:scale-x-0 hover:before:scale-x-100 after:absolute after:transition-all after:bg-orange-400 after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 '><img src='c4.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 relative before:absolute before:transition-all before:bg-orange-400 before:h-1 before:w-full before:scale-x-0 hover:before:scale-x-100 after:absolute after:transition-all after:bg-orange-400 after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 '><img src='c5.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 relative before:absolute before:transition-all before:bg-orange-400 before:h-1 before:w-full before:scale-x-0 hover:before:scale-x-100 after:absolute after:transition-all after:bg-orange-400 after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 '><img src='c6.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
             </div>
             <div className='flex justify-center mt-4'>
-              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c7.png' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
-              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c8.png' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
-              <div className='mr-2 transition border-y-2 border-transparent hover:border-orange-400 '><img src='c9.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 relative before:absolute before:transition-all before:bg-orange-400 before:h-1 before:w-full before:scale-x-0 hover:before:scale-x-100 after:absolute after:transition-all after:bg-orange-400 after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 '><img src='c7.png' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 relative before:absolute before:transition-all before:bg-orange-400 before:h-1 before:w-full before:scale-x-0 hover:before:scale-x-100 after:absolute after:transition-all after:bg-orange-400 after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 '><img src='c8.png' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
+              <div className='mr-2 relative before:absolute before:transition-all before:bg-orange-400 before:h-1 before:w-full before:scale-x-0 hover:before:scale-x-100 after:absolute after:transition-all after:bg-orange-400 after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 '><img src='c9.jpg' className=' border-2 border-slate-50 transition hover:scale-75' style={{ width: '134px', height: '134px' }}></img></div>
             </div>
           </div>
         </div>
@@ -201,6 +204,7 @@ export default function Home() {
         <div><img src='bg-footer.jpg' className='w-full' style={{ height: '382px', opacity: '0.25' }}></img></div>
         <div className='text-center bg-orange-400 text-white pt-4 pb-4'>Copyright © Enixer 2022</div>
       </div>
+
     </>
   );
 }
